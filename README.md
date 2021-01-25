@@ -8,7 +8,7 @@ American Sports-Book
 
 ## Project Description
 
-My website will have navigation functionality to show real-time NFL football, NBA basketball, College basketball, and NHL hockey game odds in the main body of the website with access to each game within that category and 3 options of bets for those games (head-to-head, spread, and over/under). The Landing page will invite users to sign up by filling out a form for the webiste and have some promotional content for the website.
+My website will have navigation functionality to show real-time NBA Basketball odds in the main body of the website with access to each game within that category and 3 options of bets for those games (head-to-head, spread, and over/under).
 
 
 ## API and Data Sample
@@ -68,7 +68,7 @@ success": true,
 
 - Apply the MVPs above to NFL, NCAA Basketball, and NHL Hockey
 - Create "placing your bet" animation for when a bet is placed before it hits the "betslip".
-- Build a live score center to track bets.
+- Create a landing page for users to sign up and display promotional content.
 
 ## Project Schedule
 
