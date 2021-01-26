@@ -1,0 +1,38 @@
+#body {
+  background-color: #E8E8E8;
+  font-family: 'Noto Sans HK', sans-serif;
+}
+
+#nav-bar {
+  border: 2px solid #484848;
+  width: auto;
+  margin: 20px;
+  font-size: larger;
+}
+
+#label-bar {
+  border: 2px solid #484848;
+  width: auto;
+  margin: 20px;
+  font-size: larger;
+}
+
+#game-content {
+  border: 2px solid #484848;
+  width: auto;
+  margin: 20px;
+  font-size: larger;
+}
+
+.each-game {
+  border: 2px solid #484848;
+  margin: 10px;
+
+}
+
+#bet-slip {
+  border: 2px solid #484848;
+  width: auto;
+  margin: 20px;
+  font-size: larger;
+}
