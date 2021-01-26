@@ -89,9 +89,8 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 [link to priority matrix] (https://app.conceptboard.com/board/di08-1nh7-xtis-5104-qs17)
 
-## Timeframes
-
 |          Component            | Priority | Estimated Time | Time Invested | Actual Time |
+|---|---| ---| ---| ---|
 
 |     Project Planning          |    Low   |    4 hours     |               |             |
 
