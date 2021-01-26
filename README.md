@@ -13,7 +13,7 @@ My website will have navigation functionality to show real-time NBA Basketball o
 
 ## API and Data Sample
 
-https://the-odds-api.com/liveapi/guides/v3/#overview
+[Odds API](https://the-odds-api.com/liveapi/guides/v3/#overview)
 
 ```
 success": true,
@@ -54,7 +54,7 @@ success": true,
 
 ## Wireframes
 
-[link to wirefram] (https://wireframe.cc/Uk1vUI)
+[link to wireframe](https://wireframe.cc/Uk1vUI)
 
 ### MVP/PostMVP
 
@@ -87,7 +87,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 ## Priority Matrix
 
-[link to priority matrix] (https://app.conceptboard.com/board/di08-1nh7-xtis-5104-qs17)
+[link to priority matrix](https://app.conceptboard.com/board/di08-1nh7-xtis-5104-qs17)
 
 ## Timeframes
 
