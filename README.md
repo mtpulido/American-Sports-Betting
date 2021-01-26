@@ -89,35 +89,23 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 [link to priority matrix] (https://app.conceptboard.com/board/di08-1nh7-xtis-5104-qs17)
 
+## Timeframes
+
 |          Component            | Priority | Estimated Time | Time Invested | Actual Time |
 |---|---| ---| ---| ---|
-
 |     Project Planning          |    Low   |    4 hours     |               |             |
-
 | Initial HTML Structure        |    Low   |    1 hour      |               |             |
-
 |      API Fetches NBA          |    High  |    3 hours     |               |             |
-
 |       Adjust to EST           |    High  |    3 hours     |               |             |
-
 |    API Fetches Other          |    High  |    3 hours     |               |             |
-
 |  Render Dynamic API Content   |    High  |    3 hours     |               |             |
-
 |  remove Dynmic API Content    |    High  |    3 hours     |               |             |
-
 | Click-Bet Functionality.      |    High  |    4.5 hours   |               |             |
-
 | "Betslip" functionality.      |  medium  |    3.5 hours   |               |             |
-
 |  append user selected bet data|    High  |    3 hours     |               |             |
-
 |   CSS Flexbox container/items |  medium  |    4 hours     |               |             |
-
 |   assign/build CSS elements   |  medium  |    3 hours     |               |             |
-
 |    Media Queries (mobile)     |   low    |    3 hours     |               |             |
-
 |             Total             |    High  |    41 hours    |               |             |
 
 
