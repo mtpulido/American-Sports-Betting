@@ -12,7 +12,9 @@ async function getNBA() {
     const responseSpread = response2.data.data
     const responseOU = response3.data.data
     
-    displayGames(responseH2H)
+    addGames(responseH2H)
+    addSpread(responseSpread)
+    addOverUnder(responseOU)
   } catch (error) {
     console.log(error)
   }
@@ -20,9 +22,12 @@ async function getNBA() {
 getNBA()
 
 
+// right now i am looping through each array separetely and just visually creating a div for each piece because i can't nest forEach's
+// it might be possible once in flexbox to give each below function a column layout so they're each next to each other and set their sizes the same
+// what i'd like to do is append each piece of additional data to the corresponding gameDIV, but that makes it out of scope. 
 
 
-function displayGames(responseH2H, responseSpread, responseOU) {
+function addGames(responseH2H) {
   let gameContainer = document.querySelector('#game-content')
 
   responseH2H.forEach((game) => {
@@ -31,14 +36,64 @@ function displayGames(responseH2H, responseSpread, responseOU) {
     newGame.classList.add('each-game')
 
     let gameData = `
-    <p>${game.teams[1]} vs. </p>
-    <p>${game.teams[0]} (home)</p>
-    <p>start time ${game.commence_time}</p>
-    <p>away team H2H odds ${game.sites[0].odds.h2h[1]}
-    <p>home team H2H odds ${game.sites[0].odds.h2h[0]}
+    <p>${game.teams[1]} 
+    <br>
+    <br>
+    ${game.teams[0]} (home)
+    <br>
+    <span class="start-text">${game.commence_time}</span></p>
+    <p>${game.sites[0].odds.h2h[1]}
+    <br>
+    <br>
+    ${game.sites[0].odds.h2h[0]}</p>
+    <p>Fill Spread</p>
+    <p>Fill O/U</p>
     `
     gameContainer.appendChild(newGame)
     newGame.insertAdjacentHTML('beforeend', gameData)
   })
+}
+
+
+
+
+function addSpread(responseSpread) {
+  let gameContainer = document.querySelector('#game-content')
+
+  responseSpread.forEach((game) => {
+
+    let newGame = document.createElement('div')
+    newGame.classList.add('each-game')
+
+    let spreadData = `
+  <p>away team points ${game.sites[0].odds.spreads.points[1]}</p>
+  <p> away team odds ${game.sites[0].odds.spreads.odds[1]}</p>
+  <p>home team points ${game.sites[0].odds.spreads.points[0]}</p>
+  <p> home team odds ${game.sites[0].odds.spreads.odds[0]}</p>
+  `
+    gameContainer.appendChild(newGame)
+    newGame.insertAdjacentHTML('beforeend', spreadData)
+  })
+}
+
+
+
+
+function addOverUnder(responseOU) {
+  let gameContainer = document.querySelector('#game-content')
   
+  responseOU.forEach((game) => {
+
+    let newGame = document.createElement('div')
+    newGame.classList.add('each-game')
+
+    let overUnderData = `
+    <p> over points ${game.sites[0].odds.totals.points[0]}</p>
+    <p> over odds ${game.sites[0].odds.totals.odds[0]}</p>
+    <p> under points ${game.sites[0].odds.totals.points[1]}</p>
+    <p> under odds ${game.sites[0].odds.totals.odds[1]}</p>
+    `
+    gameContainer.appendChild(newGame)
+    newGame.insertAdjacentHTML('beforeend', overUnderData)
+  })
 }
