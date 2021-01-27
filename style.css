@@ -191,10 +191,10 @@ align-items: flex-end;
   align-items: center;
   font-size: 40px;
   width: 370px;
-  height: 130px;
+  height: 140px;
   color: white;
   font-weight: 800;
-  filter: drop-shadow(2px 2px 30px chartreuse);
+  filter: drop-shadow(10px 5px 30px chartreuse);
 }
 
 .logo-green {
