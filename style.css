@@ -2,13 +2,18 @@
   background-color: #E8E8E8;
   font-family: 'Noto Sans HK', sans-serif;
   background-color: #181818;
+  margin: 20px;
 }
 
-#nav-bar {
-  border: 2px solid #484848;
-  width: auto;
-  margin: 20px;
-  font-size: larger;
+.nav-bar {
+  margin-top: 45px;
+  margin-left: 4px;
+  width: 1079px;
+  font-size: 20px;
+  background-color: #657786;
+  color: white;
+  display: flex;
+  justify-content: space-around;
 }
 
 .main {
@@ -22,7 +27,7 @@
   color: white;
   display: flex;
   flex-direction: column;
-  margin-top: 7px;
+  margin-top: 25px;
   margin-bottom: 7px;
   margin-left: 4px;
 }
@@ -41,7 +46,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 7px;
+  margin-top: 25px;
   margin-bottom: 7px;
   margin-right: 7px;
 }
@@ -126,3 +131,46 @@
   height: 35px;
 }
 
+.bet-container {
+  /* position: fixed;
+  right: 20px; */
+  font-size: larger;
+  height: 525px;
+  width: 370px;
+  background-color: #657786;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  margin-bottom: 7px;
+  position: fixed;
+  right: 20px;
+  /* margin-left: 10px; */
+}
+
+.bet-slip {
+border-bottom: 1px solid #181818;
+display: flex;
+justify-content: center;
+}
+
+.button-container {
+height: 550px;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+align-items: flex-end;
+}
+
+.bet-button {
+  background-color: #35d800;
+  border-radius: 10%;
+  font-family: 'Noto Sans HK', sans-serif;
+  font-size: 25px;
+  margin: 10px;
+  height: 60px;
+  width: 160px;
+  color: white;
+  font-weight: bold;
+  filter: drop-shadow(1px 1px 1px #181818);
+}

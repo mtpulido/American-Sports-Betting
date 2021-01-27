@@ -41,7 +41,7 @@ function addGames(responseH2H) {
     </div>
 
     <div class="game-spacing">
-      <div>${game.teams[0]} (home) <br><span class="start-text">${fixTime(game.commence_time)}</span></div>
+      <div>${game.teams[0]}<br><span class="start-text">${fixTime(game.commence_time)}</span></div>
     </div>
     `
     gameContainer.appendChild(newGame)
@@ -73,11 +73,11 @@ function addMoneyLine(responseH2H) {
 
     let moneyLineData = `
     <div class="moneyline-spacing">
-      <div class="odds-text">${(game.sites[0].odds.h2h[1])} </div> 
+      <div class="odds-text">${adjustedOdds((game.sites[0].odds.h2h[1]))} </div> 
     </div>
 
     <div class="moneyline-spacing">
-      <div class="odds-text">${game.sites[0].odds.h2h[0]}</div>
+      <div class="odds-text">${adjustedOdds(game.sites[0].odds.h2h[0])}</div>
     </div>
     `
     moneyLineContainer.appendChild(newMoneyLine)
@@ -98,12 +98,12 @@ function addSpreads(responseSpread) {
     let spreadData = `
     <div class="pointsspread-spacing">
       <div>${game.sites[0].odds.spreads.points[1]}</div> 
-      <div class="odds-text">${game.sites[0].odds.spreads.odds[1]}</div>
+      <div class="odds-text">${adjustedOdds(game.sites[0].odds.spreads.odds[1])}</div>
     </div>
 
     <div class="pointsspread-spacing">
       <div>${game.sites[0].odds.spreads.points[0]}</div>
-      <div class="odds-text">${game.sites[0].odds.spreads.odds[0]}</div>
+      <div class="odds-text">${adjustedOdds(game.sites[0].odds.spreads.odds[0])}</div>
     </div>
       `
     spreadsContainer.appendChild(newSpread)
@@ -124,15 +124,26 @@ function addTotals(responseOU) {
     let totalsData = `
     <div class="totalpoints-spacing">
     <div>O ${game.sites[0].odds.totals.points[0]}</div> 
-    <div class="odds-text">${game.sites[0].odds.totals.odds[0]}</div>
+    <div class="odds-text">${adjustedOdds(game.sites[0].odds.totals.odds[0])}</div>
     </div>
 
     <div class="totalpoints-spacing">
     <div>U ${game.sites[0].odds.totals.points[1]}</div>
-    <div class="odds-text">${game.sites[0].odds.totals.odds[1]}</div>
+    <div class="odds-text">${adjustedOdds(game.sites[0].odds.totals.odds[1])}</div>
     </div>
     `
     totalsContainer.appendChild(newTotals)
     newTotals.insertAdjacentHTML('beforeend', totalsData)
   })
+}
+
+
+let adjustedOdds = (odds) => {
+  let americanOdds = ''
+  if (odds >= 2) {
+    americanOdds = `+${Math.round((odds - 1) * 100)}`
+  } else {
+    americanOdds = ` ${Math.round(100 / (1 - odds))}`
+  }
+  return americanOdds
 }
