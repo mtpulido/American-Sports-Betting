@@ -41,13 +41,25 @@ function addGames(responseH2H) {
     </div>
 
     <div class="game-spacing">
-      <div>${game.teams[0]} (home) <br><span class="start-text">${game.commence_time}</span></div>
+      <div>${game.teams[0]} (home) <br><span class="start-text">${fixTime(game.commence_time)}</span></div>
     </div>
     `
     gameContainer.appendChild(newGame)
     newGame.insertAdjacentHTML('beforeend', gameData)
   })
 }
+
+let fixTime = (isoDate) => {
+  let localDate = new Date(isoDate)
+  let dateString = localDate.toString()
+  let dateFormat = `${dateString.slice(0, 10)}`
+  let timeFormat = ` ${dateString.slice(16, 21)}PM`
+
+  return dateFormat + timeFormat
+}
+//https://stackoverflow.com/questions/6525538/convert-utc-date-time-to-local-date-time help from this site with first part
+
+
 
 
 
@@ -124,25 +136,3 @@ function addTotals(responseOU) {
     newTotals.insertAdjacentHTML('beforeend', totalsData)
   })
 }
-
-
-
-
-
-
-// function addGames(responseH2H) {
-//   let gameContainer = document.querySelector('.game-container')
-
-//   responseH2H.forEach((game) => {
-//     let newGame = document.createElement('div')
-//     newGame.classList.add('each-game')
-
-//     let gameTime = `
-//       <div><span>class="start-text">${game.commence_time}</span></div>
-//     `
-//     gameContainer.appendChild(newGame)
-//     newGame.insertAdjacentHTML('beforeend', gameTime)
-
-//     console.log(gameTime)
-//   })
-// }
