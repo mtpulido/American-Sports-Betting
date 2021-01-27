@@ -12,9 +12,9 @@ async function getNBA() {
     const responseH2H = response.data.data
     const responseSpread = response2.data.data
     const responseOU = response3.data.data
-    // console.log(responseH2H)
-    // console.log(responseOU)
-    // console.log(responseSpread)
+    console.log(responseH2H)
+    console.log(responseOU)
+    console.log(responseSpread)
 
     addGames(responseH2H)
     addMoneyLine(responseH2H)
@@ -29,11 +29,9 @@ getNBA()
 
 
 function addGames(responseH2H) {
-
   let gameContainer = document.querySelector('.game-container')
 
   responseH2H.forEach((game) => {
-
     let newGame = document.createElement('div')
     newGame.classList.add('each-game')
 
@@ -54,7 +52,6 @@ function addGames(responseH2H) {
 
 
 function addMoneyLine(responseH2H) {
-
   let moneyLineContainer = document.querySelector('.moneyline-container')
 
   responseH2H.forEach((game) => {
@@ -64,7 +61,7 @@ function addMoneyLine(responseH2H) {
 
     let moneyLineData = `
     <div class="moneyline-spacing">
-      <div class="odds-text">${game.sites[0].odds.h2h[1]}</div> 
+      <div class="odds-text">${(game.sites[0].odds.h2h[1])} </div> 
     </div>
 
     <div class="moneyline-spacing">
@@ -79,7 +76,6 @@ function addMoneyLine(responseH2H) {
 
 
 function addSpreads(responseSpread) {
-
   let spreadsContainer = document.querySelector('.spread-container')
 
   responseSpread.forEach((game) => {
@@ -133,3 +129,20 @@ function addTotals(responseOU) {
 
 
 
+
+// function addGames(responseH2H) {
+//   let gameContainer = document.querySelector('.game-container')
+
+//   responseH2H.forEach((game) => {
+//     let newGame = document.createElement('div')
+//     newGame.classList.add('each-game')
+
+//     let gameTime = `
+//       <div><span>class="start-text">${game.commence_time}</span></div>
+//     `
+//     gameContainer.appendChild(newGame)
+//     newGame.insertAdjacentHTML('beforeend', gameTime)
+
+//     console.log(gameTime)
+//   })
+// }
