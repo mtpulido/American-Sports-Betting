@@ -1,6 +1,7 @@
 #body {
   background-color: #E8E8E8;
   font-family: 'Noto Sans HK', sans-serif;
+  background-color: #181818;
 }
 
 #nav-bar {
@@ -10,37 +11,95 @@
   font-size: larger;
 }
 
-#label-bar {
-  border: 2px solid #484848;
-  width: auto;
-  margin: 20px;
+.main {
   font-size: larger;
   display: flex;
-  justify-content: space-around;
 }
 
-#game-content {
-  border: 2px solid #484848;
-  width: auto;
-  margin: 20px;
+.game-container {
   font-size: larger;
+  background-color: #657786;
+  color: white;
+  display: flex;
+  flex-direction: column;
 }
 
-.each-game {
-  border: 2px solid #484848;
-  margin: 10px;
+#game-text {
+  padding-left: 15px;
+}
+
+.game-spacing {
+  padding: 15px;
+  height: 33px;
+  width: 450px;
   display: flex;
-  justify-content: space-around;
+  justify-content: left;
+  /* background-color: black; */
+}
+
+.spread-container,
+.totals-container,
+.moneyline-container {
+  font-size: larger;
+  min-width: 200px;
+  background-color: #657786;
+  color: white;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-#bet-slip {
-  border: 2px solid #484848;
-  width: auto;
-  margin: 20px;
-  font-size: larger;
+
+.each-game {
+  height: 170px;
+  width: 400px;
+  border-bottom: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
 }
+
+.each-gamble {
+  /* padding-bottom: 15px; */
+  height: 170px;
+  min-width: 215px;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  /* background-color: black; */
+}
+
 
 .start-text {
   font-size: small;
 }
+
+.odds-text {
+  color: chartreuse;
+}
+
+.pointsspread-spacing {
+  padding: 15px;
+  width: 140px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.totalpoints-spacing {
+  padding: 15px;
+  width: 140px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.moneyline-spacing {
+  padding: 15px;
+  width: 140px;
+  display: flex;
+  justify-content: center;
+}
+
