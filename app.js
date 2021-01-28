@@ -20,6 +20,7 @@ async function getNBA() {
     addMoneyLine(responseH2H)
     addSpreads(responseSpread)
     addTotals(responseOU)
+    
   } catch (error) {
     console.log(error)
   }
@@ -82,8 +83,28 @@ function addMoneyLine(responseH2H) {
     `
     moneyLineContainer.appendChild(newMoneyLine)
     newMoneyLine.insertAdjacentHTML('beforeend', moneyLineData)
-  })
+
+    })
 }
+
+
+// let moneyLineDiv = document.querySelectorAll('.moneyline-spacing')
+//     moneyLineDiv.forEach((moneyLine) => {
+//       moneyLine.addEventListener('click', moneyLineClick)
+//       console.log(moneyLineDiv)
+
+
+// let moneyLineClick = (responseH2H) => {
+//   let betslip = document.querySelector('.bet-container')
+//   let newBet = `${responseH2H.teams[1]} ${response.H2H.adjustedOdds((sites[0].odds.h2h[1]))}`
+  
+//   console.log(newBet)
+
+//     betslip.append(newBet)
+// }
+
+
+// let newBet = `${game.teams[1]} ${adjustedOdds((game.sites[0].odds.h2h[1]))}`
 
 
 
@@ -147,3 +168,4 @@ let adjustedOdds = (odds) => {
   }
   return americanOdds
 }
+
