@@ -12,9 +12,9 @@ async function getNBA() {
     const responseH2H = response.data.data
     const responseSpread = response2.data.data
     const responseOU = response3.data.data
-    console.log(responseH2H)
-    console.log(responseOU)
-    console.log(responseSpread)
+    // console.log(responseH2H)
+    // console.log(responseOU)
+    // console.log(responseSpread)
 
     addGames(responseH2H)
     addMoneyLine(responseH2H)
@@ -73,7 +73,7 @@ function addMoneyLine(responseH2H) {
 
     let moneyLineData = `
     <div class="moneyline-spacing">
-      <div class="odds-text">${adjustedOdds((game.sites[0].odds.h2h[1]))} </div> 
+      <div class="odds-text">${adjustedOdds((game.sites[0].odds.h2h[1]))}</div> 
     </div>
 
     <div class="moneyline-spacing">
