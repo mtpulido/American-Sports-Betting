@@ -1,7 +1,6 @@
 #body {
-  background-color: #E8E8E8;
   font-family: 'Noto Sans HK', sans-serif;
-  background-color: #181818;
+  background-color: #323b43;
   margin: 20px;
 }
 
@@ -14,6 +13,11 @@
   color: white;
   display: flex;
   justify-content: space-around;
+  filter: drop-shadow(1px 1px 3px #111416);
+}
+
+h3 {
+  filter: drop-shadow(1px 1px 1px #111416);
 }
 
 .main {
@@ -30,10 +34,11 @@
   margin-top: 25px;
   margin-bottom: 7px;
   margin-left: 4px;
+  filter: drop-shadow(0px 1px 3px #111416);
 }
 
 #game-text {
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
 .spread-container,
@@ -49,32 +54,35 @@
   margin-top: 25px;
   margin-bottom: 7px;
   margin-right: 7px;
+  filter: drop-shadow(1px 1px 3px #111416);
 }
 
 
 .each-game {
   height: 150px;
   width: 400px;
-  border-bottom: 1px solid #181818;
-  border-top: 1px solid #181818;
+  border-bottom: 1px solid #323b43;
+  border-top: 1px solid #323b43;
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: center;
+  /* filter: drop-shadow(1px 0px 0px #111416); */
 }
 
 .each-gamble {
   /* padding-bottom: 15px; */
   height: 150px;
   min-width: 222px;
-  border-bottom: 1px solid #181818;
-  border-top: 1px solid #181818;
+  border-bottom: 1px solid #323b43;
+  border-top: 1px solid #323b43;
   /* border-right: 1px solid black; */
   display: flex;
   flex-direction: column;
   align-items: center; 
   justify-content: center;
   /* background-color: black; */
+  /* filter: drop-shadow(1px 0px 0px #111416); */
 }
 
 
@@ -98,8 +106,6 @@
 .pointsspread-spacing {
   padding-top: 10px;
   padding-bottom: 10px;
-  /* padding-left: 20px;
-  padding-right: 20px; */
   width: 215px;
   display: flex;
   justify-content: space-around;
@@ -147,8 +153,8 @@
   /* position: fixed;
   right: 20px; */
   font-size: larger;
-  height: 525px;
-  width: 370px;
+  height: 490px;
+  width: 375px;
   background-color: #657786;
   color: white;
   display: flex;
@@ -156,14 +162,14 @@
   margin-top: 25px;
   margin-bottom: 7px;
   position: fixed;
-  right: 20px;
-  /* margin-left: 10px; */
-}
+  right: 25px;
+  filter: drop-shadow(1px 1px 3px #111416);}
 
 .bet-slip {
 border-bottom: 1px solid #181818;
 display: flex;
 justify-content: center;
+
 }
 
 .button-container {
@@ -176,21 +182,29 @@ align-items: flex-end;
 
 .bet-button {
   background-color: #35d800;
-  border: 1px solid white;
-  font-family: 'Noto Sans HK', sans-serif;
-  font-size: 25px;
+  /* border: 1px solid white; */
   margin: 10px;
   height: 60px;
-  width: 160px;
+  width: 200px;
+  filter: drop-shadow(1px 1px 2px #111416);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bet-text {
+  font-family: 'Noto Sans HK', sans-serif;
+  font-size: 30px;
   color: white;
-  font-weight: bold;
+  font-weight: 900;
+  /* filter: drop-shadow(1px 1px 3px #111416); */
 }
 
 
 .logo-container {
   position: fixed;
   top: 10px;
-  right: 20px;
+  right: 25px;
   width: 370px;
   padding-bottom: 10px;
   display: flex;
