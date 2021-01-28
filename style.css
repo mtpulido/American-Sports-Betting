@@ -191,6 +191,9 @@ align-items: flex-end;
   justify-content: center;
   align-items: center;
 }
+.bet-button:hover {
+  background-color: #3bf200;
+}
 
 .bet-text {
   font-family: 'Noto Sans HK', sans-serif;
