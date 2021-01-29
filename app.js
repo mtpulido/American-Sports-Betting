@@ -160,8 +160,13 @@ let spreadClick = (e, spread, odds, team) => {
   let betslip = document.querySelector('.button-container')
   let newBet = document.createElement('div')
   if (e.target.id === spread) {
-    newBet = `${spread} ${odds} ${team}<br>`
+
+    newBet = `${spread} ${odds} ${team}
+    <form>
+    <input type="text" placeholder="wager" class="bet-form">
+    </form>`
     betslip.insertAdjacentHTML('afterbegin', newBet)
+    betslip.insertAdjacentHTML('beforeend', newForm)
   }
 }
 
@@ -180,23 +185,27 @@ function addTotals(responseOU) {
     newTotals.classList.add('each-gamble')
 
     let totalsData = `
-    <div class="totalpoints-spacing">
-    <div>O ${game.sites[0].odds.totals.points[0]}</div> 
-    <div class="odds-text">${adjustedOdds(game.sites[0].odds.totals.odds[0])}</div>
+    <div class="totalpoints-spacing" id="${game.sites[0].odds.totals.points[0]}" id="${adjustedOdds(game.sites[0].odds.totals.odds[0])}">
+    <div id="${game.sites[0].odds.totals.points[0]}">O ${game.sites[0].odds.totals.points[0]}</div> 
+    <div class="odds-text" id="${adjustedOdds(game.sites[0].odds.totals.odds[0])}">${adjustedOdds(game.sites[0].odds.totals.odds[0])}</div>
     </div>
 
-    <div class="totalpoints-spacing">
-    <div>U ${game.sites[0].odds.totals.points[1]}</div>
-    <div class="odds-text">${adjustedOdds(game.sites[0].odds.totals.odds[1])}</div>
+    <div class="totalpoints-spacing2" id="${game.sites[0].odds.totals.points[1]}" id="${adjustedOdds(game.sites[0].odds.totals.odds[1])}">
+    <div id="${game.sites[0].odds.totals.points[1]}">U ${game.sites[0].odds.totals.points[1]}</div>
+    <div class="odds-text" id="${adjustedOdds(game.sites[0].odds.totals.odds[1])}">${adjustedOdds(game.sites[0].odds.totals.odds[1])}</div>
     </div>
     `
     totalsContainer.appendChild(newTotals)
     newTotals.insertAdjacentHTML('beforeend', totalsData)
 
-    // let totalDiv = document.querySelectorAll('.totalpoints-spacing')
-    // totalDiv.forEach((total) => {
-    //   total.addEventListener('click', (e) => totalClick(e, game.sites[0].odds.totals.points[0], adjustedOdds(game.sites[0].odds.totals.odds[0]), game.teams[0], game.teams[1]))
-    // })
+    let totalDiv = document.querySelectorAll('.totalpoints-spacing')
+    totalDiv.forEach((total) => {
+      total.addEventListener('click', (e) => totalClick(e, game.sites[0].odds.totals.points[0], adjustedOdds(game.sites[0].odds.totals.odds[0]), game.teams[0], game.teams[1]))
+    })
+    let totalDiv2 = document.querySelectorAll('.totalpoints-spacing2')
+    totalDiv2.forEach((total2) => {
+      total2.addEventListener('click', (e) => totalClick(e, game.sites[0].odds.totals.points[1], adjustedOdds(game.sites[0].odds.totals.odds[1]), game.teams[0], game.teams[1]))
+    })
   })
 }
 

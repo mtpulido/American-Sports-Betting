@@ -147,6 +147,22 @@ h3 {
   background-color: #434f59;
 }
 
+.totalpoints-spacing2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* padding-left: 20px;
+  padding-right: 20px; */
+  width: 215px;
+  display: flex;
+  justify-content: space-around;
+  /* background-color: black; */
+  height: 35px;
+}
+
+.totalpoints-spacing2:hover {
+  background-color: #434f59;
+}
+
 
 .moneyline-spacing {
   padding-top: 10px;
@@ -262,4 +278,10 @@ align-items: flex-start;
   align-items: flex-end;
   justify-content: flex-end;
   position: fixed;
+}
+
+
+.bet-form {
+  height: 25px;
+  width: 50px;
 }
