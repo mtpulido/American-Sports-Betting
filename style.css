@@ -117,6 +117,20 @@ h3 {
   background-color: #434f59;
 }
 
+.pointsspread-spacing2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 215px;
+  display: flex;
+  justify-content: space-around;
+  /* background-color: black; */
+  height: 35px;
+}
+
+.pointsspread-spacing2:hover {
+  background-color: #434f59;
+}
+
 .totalpoints-spacing {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -149,6 +163,21 @@ h3 {
   background-color: #434f59;
 }
 
+.moneyline-spacing2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* padding-left: 20px; */
+  /* padding-right: 20px; */
+  width: 215px;
+  display: flex;
+  justify-content: center;
+  /* background-color: black; */
+  height: 35px;
+}
+.moneyline-spacing2:hover {
+  background-color: #434f59;
+}
+
 .bet-container {
   /* position: fixed;
   right: 20px; */
@@ -165,35 +194,23 @@ h3 {
   right: 20px;
   filter: drop-shadow(1px 1px 3px #111416);}
 
+
+
 .bet-slip {
 border-bottom: 1px solid #181818;
 display: flex;
+/* flex-direction: column; */
 justify-content: center;
-
 }
 
 .button-container {
 height: 550px;
 display: flex;
 flex-direction: column;
-justify-content: flex-end;
-align-items: flex-end;
+justify-content: flex-start;
+align-items: flex-start;
 }
 
-.bet-button {
-  background-color: #35d800;
-  /* border: 1px solid white; */
-  margin: 10px;
-  height: 60px;
-  width: 200px;
-  filter: drop-shadow(1px 1px 2px #111416);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.bet-button:hover {
-  background-color: #3bf200;
-}
 
 .bet-text {
   font-family: 'Noto Sans HK', sans-serif;
@@ -229,3 +246,20 @@ align-items: flex-end;
   color: chartreuse;
 }
 
+.submit-bets {
+  height: 50px;
+  width: 200px;
+  font-size: 25px;
+  font-weight: bolder;
+  background-color: rgb(109, 214, 3);
+  color: white;
+}
+.place-bets-container {
+  height: 450px;
+  width: 370px;
+  /* background-color: black; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  position: fixed;
+}
