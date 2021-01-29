@@ -9,10 +9,12 @@ async function getNBA() {
     const response = await axios.get(`${nbaHead2Head}`);
     const response2 = await axios.get(`${nbaSpread}`);
     const response3 = await axios.get(`${nbaOverUnder}`);
+    //calling the APIS to have access to their data
     const responseH2H = response.data.data
     const responseSpread = response2.data.data
     const responseOU = response3.data.data
-    console.log(responseH2H)
+    // storing the APIs into variables to traverse through later. 
+    // console.log(responseH2H)
     // console.log(responseOU)
     // console.log(responseSpread)
 
@@ -20,12 +22,13 @@ async function getNBA() {
     addMoneyLine(responseH2H)
     addSpreads(responseSpread)
     addTotals(responseOU)
+    // these are calling the below functions that display the API data on the browser
     
   } catch (error) {
     console.log(error)
   }
 }
-getNBA()
+getNBA() //this calls everything above
 
 
 
@@ -35,13 +38,13 @@ getNBA()
 
 
 function addGames(responseH2H) {
-  let gameContainer = document.querySelector('.game-container')
+  let gameContainer = document.querySelector('.game-container') //declaring container to append items below to
 
   responseH2H.forEach((game) => {
     let newGame = document.createElement('div')
-    newGame.classList.add('each-game')
+    newGame.classList.add('each-game') //going through each API array and putting them into a div with the class each game
 
-    let gameData = `
+    let gameData = ` 
     <div class="game-spacing">
       <div>${game.teams[1]}</div>
     </div>
@@ -52,7 +55,7 @@ function addGames(responseH2H) {
     `
     gameContainer.appendChild(newGame)
     newGame.insertAdjacentHTML('beforeend', gameData)
-  })
+  }) //declaring a variable (gameData) for the actual API data that i need for each game and creating HTML elements from them and appending them to the game container. 
 }
 let fixTime = (isoDate) => {
   let localDate = new Date(isoDate)
@@ -61,7 +64,7 @@ let fixTime = (isoDate) => {
   let timeFormat = ` ${dateString.slice(16, 21)}PM`
 
   return dateFormat + timeFormat
-}
+} // adjusting the time data to be not ISO 8601 format and actually be readable for people. 
 //https://stackoverflow.com/questions/6525538/convert-utc-date-time-to-local-date-time help from this site with first part
 
 
@@ -72,12 +75,12 @@ let fixTime = (isoDate) => {
 
 
 function addMoneyLine(responseH2H) {
-  let moneyLineContainer = document.querySelector('.moneyline-container')
+  let moneyLineContainer = document.querySelector('.moneyline-container') //declaring container to append to
 
   responseH2H.forEach((game) => {
 
     let newMoneyLine = document.createElement('div')
-    newMoneyLine.classList.add('each-gamble')
+    newMoneyLine.classList.add('each-gamble') //for eaching through each data point and assigning a class
 
     let moneyLineData = `
     <div class="moneyline-spacing" id="${adjustedOdds((game.sites[0].odds.h2h[1]))}">
@@ -89,17 +92,20 @@ function addMoneyLine(responseH2H) {
     </div>
     `
     moneyLineContainer.appendChild(newMoneyLine)
-    newMoneyLine.insertAdjacentHTML('beforeend', moneyLineData)
+    newMoneyLine.insertAdjacentHTML('beforeend', moneyLineData) //pull the data i want and appending to the moneyline container
 
-    let moneyLineDiv = document.querySelectorAll('.moneyline-spacing')
+    let moneyLineDiv = document.querySelectorAll('.moneyline-spacing') //creating buttons for each class listed above. 
     moneyLineDiv.forEach((moneyLine) => {
       moneyLine.addEventListener('click', (e) => moneyLineClick(e, adjustedOdds((game.sites[0].odds.h2h[1])), game.teams[1]))
       // console.log(moneyLineDiv)
+
+      //if i use a for loop i could access each event listener by an index value
     })
     let moneyLineDiv2 = document.querySelectorAll('.moneyline-spacing2')
     moneyLineDiv2.forEach((moneyLine2) => {
       moneyLine2.addEventListener('click', (e) => moneyLineClick(e, adjustedOdds((game.sites[0].odds.h2h[0])), game.teams[0]))
       // console.log(moneyLineDiv)
+      // creating event listeners for clicking. the moneyline callback function to outline the parameters of which to traverse the API data to single out the data points i want to grab. This will need to be redone once i learn more.  
   })
     })
 }
@@ -110,10 +116,11 @@ let moneyLineClick = (e, moneyLine, team) => {
   let betslip = document.querySelector('.button-container')
   let newBet = document.createElement('div')
   if (e.target.id === moneyLine) {
-    newBet = `${moneyLine} ${team} <br>`
+    newBet = `${moneyLine} ${team}<br>
+    `
     betslip.insertAdjacentHTML('afterbegin', newBet)
   }
-}
+} // append the data grabbed through clicking to the betslip. selecting currently by the ID of the API data point and the corresponding team. this is somewhat flawed and I will have to rework at a later date. 
 
 
 
@@ -122,7 +129,7 @@ let moneyLineClick = (e, moneyLine, team) => {
 
 
 function addSpreads(responseSpread) {
-  let spreadsContainer = document.querySelector('.spread-container')
+  let spreadsContainer = document.querySelector('.spread-container') //same stuff as above. 
 
   responseSpread.forEach((game) => {
 
@@ -161,23 +168,18 @@ let spreadClick = (e, spread, odds, team) => {
   let newBet = document.createElement('div')
   if (e.target.id === spread) {
 
-    newBet = `${spread} ${odds} ${team}
-    <form>
-    <input type="text" placeholder="wager" class="bet-form">
-    </form>`
+    newBet = `${spread} ${odds} ${team}<br>
+    `
     betslip.insertAdjacentHTML('afterbegin', newBet)
-    betslip.insertAdjacentHTML('beforeend', newForm)
   }
-}
-
-
+} //same stuff as above. 
 
 
 
 
 
 function addTotals(responseOU) {
-  let totalsContainer = document.querySelector('.totals-container')
+  let totalsContainer = document.querySelector('.totals-container') //same stuff as above. 
   
   responseOU.forEach((game) => {
 
@@ -213,11 +215,11 @@ let totalClick = (e, total, odds, team, team1) => {
   // console.log(e.target.id)
   let betslip = document.querySelector('.button-container')
   let newBet = document.createElement('div')
-  if (e.target.id === total) {
+  if (e.target.id === total, odds) {
     newBet = `${total} ${odds} ${team} ${team1}<br>`
     betslip.insertAdjacentHTML('afterbegin', newBet)
   }
-}
+} //same stuff as above. 
 
 
 
@@ -230,4 +232,60 @@ let adjustedOdds = (odds) => {
   }
   return americanOdds
 }
+//this is a modifier function for each API data point with the class list of "odds-text". it converts it from it's decimal form to the + or - large number that is displayed.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function addMoneyLine(responseH2H) {
+//   let moneyLineContainer = document.querySelector('.moneyline-container')
+
+//   responseH2H.forEach((game) => {
+
+//     let newMoneyLine = document.createElement('div')
+//     newMoneyLine.classList.add('each-gamble')
+
+//     let moneyLineData = `
+//     <div class="moneyline-spacing">
+//       <div class="odds-text">${adjustedOdds((game.sites[0].odds.h2h[1]))}</div> 
+//     </div>
+
+//     <div class="moneyline-spacing2">
+//       <div class="odds-text">${adjustedOdds(game.sites[0].odds.h2h[0])}</div>
+//     </div>
+//     `
+//     moneyLineContainer.appendChild(newMoneyLine)
+//     newMoneyLine.insertAdjacentHTML('beforeend', moneyLineData) 
+//   })
+
+//   let clickableMoneyLineDiv = document.querySelectorAll('.moneyline-spacing')
+//   clickableMoneyLineDiv.addEventListener('click', callback)
+
+//   function callback(responseH2H) {
+//     for (let i = 0; i < responseH2H.length; i++) {
+
+//       responseH2H[i].forEach((game) => {
+//         let clickablePair = game.teams[0] + game.sites[0].odds.h2h[0]
+//         let clickablPair2 = game.teams[1] + game.sites[1].odds.h2h[1]
+//       })
+//     }
+//   }
+
+// }
+
+
 
