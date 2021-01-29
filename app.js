@@ -14,7 +14,7 @@ async function getNBA() {
     const responseSpread = response2.data.data
     const responseOU = response3.data.data
     // storing the APIs into variables to traverse through later. 
-    // console.log(responseH2H)
+    console.log(responseH2H)
     // console.log(responseOU)
     // console.log(responseSpread)
 
