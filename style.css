@@ -279,27 +279,29 @@ justify-content: center;
   }
 
   .logo {
+    text-align: center;
     order: 0;
     }
 
   .nav-bar {
     order: 1;
-    width: 97.8%;
-    margin-left: 17px;
+    width: 98%;
+    margin-left: 14px;
   }
 
 
   .main {
-    width: 85%;
-    margin: 0 auto;
+    width: 95%;
     display: inline;
+    margin-left: 15px;
+    margin-right: 5px;
   }
 
 
   .game-container {
     display: inline-block;
-    width: 39%;
-    margin-left: 12px;
+    width: 37%;
+    margin-left: 0;
 
   }
   
@@ -307,18 +309,21 @@ justify-content: center;
   .totals-container,
   .moneyline-container {
     display: inline-block;
-    width: 19%;
+    width: 19.5%;
     text-align: center;
-    margin-left: 1px;
-    margin-right: 1px;
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
 
 
   .bet-container {
-    width: 98%;
+   width: 98%;
    margin: 0 auto;
+   margin-bottom: 20px;
+   margin-top: 15px;
    text-align: center;
   }
+  
 
 }
