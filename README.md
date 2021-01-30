@@ -95,18 +95,16 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |---|---| ---| ---| ---|
 |     Project Planning          |    Low   |    4 hours     |    4 hours    |   4 hours   |
 | Initial HTML Structure        |    Low   |    30 min      |    30 min     |   1 hour    |
-|      API Fetches NBA          |    High  |    3 hours     |    2 hours    |   2 hours   |
+|      API Fetches NBA          |    High  |    3 hours     |    3 hours    |   3 hours   |
 |  Adjust to EST & adjust odds  |    High  |    3 hours     |    3 hours    |   3 hours   |
-|    API Fetches Other          |    High  |    3 hours     |               |             |
 |  Render Dynamic API Content   |    High  |    3 hours     |    3 hours    |   3 hours   |
-|  remove Dynmic API Content    |    High  |    3 hours     |               |             |
-| Click-Bet Functionality.      |    High  |    4.5 hours   |               |             |
-| "Betslip" functionality.      |  medium  |    3.5 hours   |               |             |
-|  append user selected bet data|    High  |    3 hours     |               |             |
-|   CSS Flexbox container/items |  medium  |    4 hours     |    5 hours    |    5 hours  |
-|   assign/build CSS elements   |  medium  |    3 hours     |    3 hours    |    3 hours  |
-|    Media Queries (mobile)     |   low    |    3 hours     |               |             |
-|             Total             |    High  |    41 hours    |               |             |
+| Click-Bet Functionality.      |    High  |    4.5 hours   |    10 hours   |   10 hours  |
+| "Betslip" functionality.      |  medium  |    3.5 hours   |    1 hour     |   1 hour    |
+|  append user selected bet data|    High  |    3 hours     |    3 hours    |   3 hours   |
+|   CSS Flexbox container/items |  medium  |    4 hours     |    6 hours    |   6 hours   |
+|   assign/build CSS elements   |  medium  |    3 hours     |    2 hours    |   2 hours   |
+|    Media Queries (mobile)     |   low    |    3 hours     |    3 hours    |   3 hours   |
+|             Total             |    High  |    34.5 hours  |    38.5 hours |   38.5 hours|
 
 
 
@@ -115,10 +113,36 @@ You are **responsible** for scheduling time with your squad to seek approval for
 Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+// within the function to append the teams playing and start times in the far left column, I had to solve how to edit the "game.commence_time" endpoint to have the look of a normal date and time. It's orginal format was iso8601.
+
+//...
+
+    let gameData = ` 
+    <div class="game-spacing">
+      <div>${game.teams[1]}</div>
+    </div>
+
+    <div class="game-spacing">
+      <div>${game.teams[0]}<br><span class="start-text">${fixTime(game.commence_time)}</span></div>
+    </div>
+    `
+    gameContainer.appendChild(newGame)
+    newGame.insertAdjacentHTML('beforeend', gameData)
+  }) //declaring a variable (gameData) for the actual API data that i need for each game and creating HTML elements from them and appending them to the game container. 
+}
+
+let fixTime = (isoDate) => {
+  let localDate = new Date(isoDate)
+  let dateString = localDate.toString()
+  let dateFormat = `${dateString.slice(0, 10)}`
+  let timeFormat = ` ${dateString.slice(16, 21)}PM`
+
+  return dateFormat + timeFormat
+}
 }
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+ There was no need to remove API data as I was firmly instructed to stop working and not accomplish my post MVP goal of displaying the data for the football, college basketball, and hockey. I thus removed it from my timeframes. Due to this I also removed "render other API content". 
+
+ Also, I had to adjust the odds data as it came in a decimal format and i needed it to display the +/- larger numbers. I added this in next to the adjusting the time. 
