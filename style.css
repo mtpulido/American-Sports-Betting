@@ -7,7 +7,7 @@
 .nav-bar {
   margin-top: 45px;
   margin-left: 4px;
-  width: 1079px;
+  width: 72.5%;
   font-size: 20px;
   background-color: #657786;
   color: white;
@@ -35,6 +35,7 @@ h3 {
   margin-bottom: 7px;
   margin-left: 4px;
   filter: drop-shadow(0px 1px 3px #111416);
+  width: 26.8%;
 }
 
 #game-text {
@@ -45,7 +46,7 @@ h3 {
 .totals-container,
 .moneyline-container {
   font-size: larger;
-  min-width: 222px;
+  width: 14.93%;
   background-color: #657786;
   color: white;
   display: flex;
@@ -60,20 +61,21 @@ h3 {
 
 .each-game {
   height: 150px;
-  width: 400px;
+  width: 100%;
   border-bottom: 1px solid #323b43;
   border-top: 1px solid #323b43;
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: center;
+  /* background-color: black; */
   /* filter: drop-shadow(1px 0px 0px #111416); */
 }
 
 .each-gamble {
   /* padding-bottom: 15px; */
   height: 150px;
-  min-width: 222px;
+  width: 100%;
   border-bottom: 1px solid #323b43;
   border-top: 1px solid #323b43;
   /* border-right: 1px solid black; */
@@ -97,7 +99,7 @@ h3 {
 .game-spacing {
   padding: 10px;
   height: 35px;
-  width: 500px;
+  width: 100%;
   display: flex;
   justify-content: left;
   /* background-color: black; */
@@ -106,7 +108,7 @@ h3 {
 .pointsspread-spacing {
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 215px;
+  width: 97%;
   display: flex;
   justify-content: space-around;
   /* background-color: black; */
@@ -120,7 +122,7 @@ h3 {
 .pointsspread-spacing2 {
   padding-top: 10px;
   padding-bottom: 10px;
-  width: 215px;
+  width: 97%;
   display: flex;
   justify-content: space-around;
   /* background-color: black; */
@@ -136,7 +138,7 @@ h3 {
   padding-bottom: 10px;
   /* padding-left: 20px;
   padding-right: 20px; */
-  width: 215px;
+  width: 97%;
   display: flex;
   justify-content: space-around;
   /* background-color: black; */
@@ -152,7 +154,7 @@ h3 {
   padding-bottom: 10px;
   /* padding-left: 20px;
   padding-right: 20px; */
-  width: 215px;
+  width: 97%;
   display: flex;
   justify-content: space-around;
   /* background-color: black; */
@@ -169,7 +171,7 @@ h3 {
   padding-bottom: 10px;
   /* padding-left: 20px; */
   /* padding-right: 20px; */
-  width: 215px;
+  width: 97%;
   display: flex;
   justify-content: center;
   /* background-color: black; */
@@ -184,7 +186,7 @@ h3 {
   padding-bottom: 10px;
   /* padding-left: 20px; */
   /* padding-right: 20px; */
-  width: 215px;
+  width: 97%;
   display: flex;
   justify-content: center;
   /* background-color: black; */
@@ -199,16 +201,16 @@ h3 {
   right: 20px; */
   font-size: larger;
   height: 490px;
-  width: 375px;
+  width: 24.6%;
   background-color: #657786;
   color: white;
   display: flex;
   flex-direction: column;
   margin-top: 25px;
   margin-bottom: 7px;
-  position: fixed;
-  right: 20px;
-  filter: drop-shadow(1px 1px 3px #111416);}
+  margin-left: 20px;
+  filter: drop-shadow(1px 1px 3px #111416);
+}
 
 
 
@@ -240,18 +242,19 @@ align-items: flex-start;
 .logo-container {
   position: fixed;
   top: 10px;
-  right: 25px;
-  width: 370px;
+  right: 55px;
+  width: 19%;
   padding-bottom: 10px;
   display: flex;
+  z-index: -1;
 }
 
 .logo {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   font-size: 40px;
-  width: 370px;
+  width: 100%;
   height: 140px;
   color: white;
   font-weight: 800;
@@ -264,20 +267,29 @@ align-items: flex-start;
 
 .submit-bets {
   height: 50px;
-  width: 200px;
+  width: 98%;
   font-size: 25px;
   font-weight: bolder;
   background-color: rgb(109, 214, 3);
   color: white;
+  margin-top: 3px;
 }
 .place-bets-container {
   height: 450px;
-  width: 370px;
+  width: 100%;
   /* background-color: black; */
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  position: fixed;
+}
+
+.place-bets-button {
+  height: 450px;
+  width: 100%;
+  /* background-color: black; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 
