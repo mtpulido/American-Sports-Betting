@@ -78,11 +78,11 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Jan 25-26| Project Planning and Prjoect Approval | Incomplete
-|Jan 26| start HTML structure, code API data fetches for each sport | Incomplete
-|Jan 27| finalize HTML structure, code functionality to display/remove game odds according to navigation | Incomplete
-|Jan 28| code clickable bet selections and append to "bet slip"  | Incomplete
-|Jan 29| CSS: flexbox positioning, overall styling, media queries to finish off MVP | Incomplete
+|Jan 25-26| Project Planning and Prjoect Approval | complete
+|Jan 26| start HTML structure, code API data fetches for each sport | complete
+|Jan 27| finalize HTML structure, code functionality to display/remove game odds according to navigation | complete
+|Jan 28| code clickable bet selections and append to "bet slip"  | complete
+|Jan 29| CSS: flexbox positioning, overall styling, media queries to finish off MVP | complete
 |Feb 1| Presentations/Project Submission | Incomplete
 
 ## Priority Matrix
