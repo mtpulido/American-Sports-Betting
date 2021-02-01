@@ -14,9 +14,6 @@ async function getNBA() {
     const responseSpread = response2.data.data
     const responseOU = response3.data.data
     // storing the APIs into variables to traverse through later. 
-    console.log(responseH2H)
-    // console.log(responseOU)
-    // console.log(responseSpread)
 
     addGames(responseH2H)
     addMoneyLine(responseH2H)
@@ -38,11 +35,11 @@ getNBA() //this calls everything above
 
 
 function addGames(responseH2H) {
-  let gameContainer = document.querySelector('.game-container') //declaring container to append items below to
+  let gameContainer = document.querySelector('.game-container') //declaring the game-container to append items below to
 
   responseH2H.forEach((game) => {
     let newGame = document.createElement('div')
-    newGame.classList.add('each-game') //going through each API array and putting them into a div with the class each game
+    newGame.classList.add('each-game') //going through each API array and putting them into a div with the class each-game. 
 
     let gameData = ` 
     <div class="game-spacing">
@@ -55,16 +52,16 @@ function addGames(responseH2H) {
     `
     gameContainer.appendChild(newGame)
     newGame.insertAdjacentHTML('beforeend', gameData)
-  }) //declaring a variable (gameData) for the actual API data that i need for each game and creating HTML elements from them and appending them to the game container. 
+  }) //declaring a variable (gameData) for the actual API data that i need for each game and creating HTML elements from them and appending them to the game-container. 
 }
 let fixTime = (isoDate) => {
   let localDate = new Date(isoDate)
   let dateString = localDate.toString()
   let dateFormat = `${dateString.slice(0, 10)}`
-  let timeFormat = ` ${dateString.slice(16, 21)}PM`
+  let timeFormat = ` ${dateString.slice(16, 21)}`
 
   return dateFormat + timeFormat
-} // adjusting the time data to be not ISO 8601 format and actually be readable for people. 
+} // adjusting the time data to display in this order: the day of the week, the month, the date, and the local time of the user. it originally came through as iso 8601 format. The way this reads as an endpoint is: commence_time: "2021-02-02T00:40:00Z".
 //https://stackoverflow.com/questions/6525538/convert-utc-date-time-to-local-date-time help from this site with first part
 
 
@@ -75,12 +72,12 @@ let fixTime = (isoDate) => {
 
 
 function addMoneyLine(responseH2H) {
-  let moneyLineContainer = document.querySelector('.moneyline-container') //declaring container to append to
+  let moneyLineContainer = document.querySelector('.moneyline-container') //declaring the moneyline-container to append the below data to. 
 
   responseH2H.forEach((game) => {
 
     let newMoneyLine = document.createElement('div')
-    newMoneyLine.classList.add('each-gamble') //for eaching through each data point and assigning a class
+    newMoneyLine.classList.add('each-gamble') //for eaching through each data point and assigning the each-gamble class for the div each endpoint is assigned to. 
 
     let moneyLineData = `
     <div class="moneyline-spacing" id="${adjustedOdds((game.sites[0].odds.h2h[1]))}">
@@ -92,27 +89,23 @@ function addMoneyLine(responseH2H) {
     </div>
     `
     moneyLineContainer.appendChild(newMoneyLine)
-    newMoneyLine.insertAdjacentHTML('beforeend', moneyLineData) //pull the data i want and appending to the moneyline container
+    newMoneyLine.insertAdjacentHTML('beforeend', moneyLineData) //pull the data i want and appending to the moneyline container using insert adjacent html. I'm assigning these values Divs to be able to style and grab later through my event listener. 
 
-    let moneyLineDiv = document.querySelectorAll('.moneyline-spacing') //creating buttons for each class listed above. 
+    let moneyLineDiv = document.querySelectorAll('.moneyline-spacing') //creating buttons for each class listed above. i'm grabbing the div's that have the specific class moneyline-spacing, in this case the ones that have the hover styling. Then, i'm using a callback function that has the specific endpoints I want to listen for as the parameters. 
     moneyLineDiv.forEach((moneyLine) => {
       moneyLine.addEventListener('click', (e) => moneyLineClick(e, adjustedOdds((game.sites[0].odds.h2h[1])), game.teams[1]))
-      // console.log(moneyLineDiv)
-
-      //if i use a for loop i could access each event listener by an index value
     })
+
     let moneyLineDiv2 = document.querySelectorAll('.moneyline-spacing2')
     moneyLineDiv2.forEach((moneyLine2) => {
       moneyLine2.addEventListener('click', (e) => moneyLineClick(e, adjustedOdds((game.sites[0].odds.h2h[0])), game.teams[0]))
-      // console.log(moneyLineDiv)
-      // creating event listeners for clicking. the moneyline callback function to outline the parameters of which to traverse the API data to single out the data points i want to grab. This will need to be redone once i learn more.  
+      // creating event listeners for clicking. the moneyline callback function to outline the parameters of which to traverse the API data to single out the end points i want to grab. This will need to be redone once i learn more.  
   })
     })
 }
 
 
 let moneyLineClick = (e, moneyLine, team) => {
-  // console.log(e.target.id)
   let betslip = document.querySelector('.button-container')
   let newBet = document.createElement('div')
   if (e.target.id === moneyLine) {
@@ -120,7 +113,7 @@ let moneyLineClick = (e, moneyLine, team) => {
     `
     betslip.insertAdjacentHTML('afterbegin', newBet)
   }
-} // append the data grabbed through clicking to the betslip. selecting currently by the ID of the API data point and the corresponding team. this is somewhat flawed and I will have to rework at a later date. 
+} // append the data grabbed through clicking to the betslip. selecting currently by the ID of the API data point and the corresponding team. this is somewhat flawed and I will have to rework at a later date. the break allows for lines between the the one being appended and the next one. 
 
 
 
@@ -129,7 +122,7 @@ let moneyLineClick = (e, moneyLine, team) => {
 
 
 function addSpreads(responseSpread) {
-  let spreadsContainer = document.querySelector('.spread-container') //same stuff as above. 
+  let spreadsContainer = document.querySelector('.spread-container') //same stuff as above. just using a different endpoint, specified by the responseSpread variable as the parameter to traverse to grab the information I need.  
 
   responseSpread.forEach((game) => {
 
@@ -212,7 +205,6 @@ function addTotals(responseOU) {
 }
 
 let totalClick = (e, total, odds, team, team1) => {
-  // console.log(e.target.id)
   let betslip = document.querySelector('.button-container')
   let newBet = document.createElement('div')
   if (e.target.id === total, odds) {
@@ -233,6 +225,17 @@ let adjustedOdds = (odds) => {
   return americanOdds
 }
 //this is a modifier function for each API data point with the class list of "odds-text". it converts it from it's decimal form to the + or - large number that is displayed.  
+
+
+
+
+
+
+
+
+
+
+
 
 
 

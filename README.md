@@ -4,7 +4,7 @@
 
 ## Project Name
 
-American Sports-Book
+Pulido SportsBook
 
 ## Project Description
 
@@ -143,6 +143,6 @@ let fixTime = (isoDate) => {
 ```
 
 ## Change Log
- There was no need to remove API data as I was firmly instructed to stop working and not accomplish my post MVP goal of displaying the data for the football, college basketball, and hockey. I thus removed it from my timeframes. Due to this I also removed "render other API content". 
+ There was no need to keep "remove API data" or "render other API content" in my timeframes as I was instructed to stop working and not try to accomplish my post MVP goal to display the data for football, college basketball, and hockey.
 
  Also, I had to adjust the odds data as it came in a decimal format and i needed it to display the +/- larger numbers. I added this in next to the adjusting the time. 
