@@ -1,10 +1,8 @@
-# American-Sports-Betting
-
-# Project Overview
-
 ## Project Name
 
 Pulido SportsBook
+
+[final website](https://mtpulido.github.io/Pulido-SportsBook/)
 
 ## Project Description
 
